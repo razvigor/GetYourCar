@@ -1,12 +1,8 @@
 import { Link } from 'react-router-dom';
-import BcgImage from '../assets/images/home-hero.png';
 
 const Home = () => {
 	return (
-		<div
-			className='home-container'
-			style={{ backgroundImage: `url(${BcgImage})` }}
-		>
+		<div className='home-container'>
 			<h1>You got the travel plans, we got the travel vans.</h1>
 			<p>
 				Add adventure to your life by joining the #vanlife movement. Rent the
