@@ -13,7 +13,8 @@ createServer({
 			price: 60,
 			description:
 				'The Modest Explorer is a van designed to get you out of the house and into nature. This beauty is equipped with solar panels, a composting toilet, a water tank and kitchenette. The idea is that you can pack up your home and escape for a weekend or even longer!',
-			imageUrl: 'gs://rent-a-car-2e818.appspot.com/modest-explorer.png',
+			imageUrl:
+				'https://firebasestorage.googleapis.com/v0/b/rent-a-car-2e818.appspot.com/o/images%2Fmodest-explorer.png?alt=media&token=89460ed2-6a96-4297-93a7-0cc38d89b16f',
 			type: 'simple',
 			hostId: '123',
 		});
@@ -23,7 +24,8 @@ createServer({
 			price: 80,
 			description:
 				"Beach Bum is a van inspired by surfers and travelers. It was created to be a portable home away from home, but with some cool features in it you won't find in an ordinary camper.",
-			imageUrl: 'gs://rent-a-car-2e818.appspot.com/beach-bum.png',
+			imageUrl:
+				'https://firebasestorage.googleapis.com/v0/b/rent-a-car-2e818.appspot.com/o/images%2Fbeach-bum.png?alt=media&token=f1d9750d-15f8-4a7f-9792-79ea06fee58c',
 			type: 'rugged',
 			hostId: '123',
 		});
@@ -33,7 +35,8 @@ createServer({
 			price: 100,
 			description:
 				"Reliable Red is a van that was made for travelling. The inside is comfortable and cozy, with plenty of space to stretch out in. There's a small kitchen, so you can cook if you need to. You'll feel like home as soon as you step out of it.",
-			imageUrl: 'gs://rent-a-car-2e818.appspot.com/reliable-red.png',
+			imageUrl:
+				'https://firebasestorage.googleapis.com/v0/b/rent-a-car-2e818.appspot.com/o/images%2Freliable-red.png?alt=media&token=ee7755db-3b44-44c8-9f93-5fb4b615ee0b',
 			type: 'luxury',
 			hostId: '456',
 		});
@@ -43,7 +46,8 @@ createServer({
 			price: 65,
 			description:
 				'Dreamfinder is the perfect van to travel in and experience. With a ceiling height of 2.1m, you can stand up in this van and there is great head room. The floor is a beautiful glass-reinforced plastic (GRP) which is easy to clean and very hard wearing. A large rear window and large side windows make it really light inside and keep it well ventilated.',
-			imageUrl: 'gs://rent-a-car-2e818.appspot.com/dreamfinder.png',
+			imageUrl:
+				'https://firebasestorage.googleapis.com/v0/b/rent-a-car-2e818.appspot.com/o/images%2Fdreamfinder.png?alt=media&token=5545040f-dfc5-4c64-9a7d-3b89ccdb0a4d',
 			type: 'simple',
 			hostId: '789',
 		});
@@ -53,7 +57,8 @@ createServer({
 			price: 120,
 			description:
 				'The Cruiser is a van for those who love to travel in comfort and luxury. With its many windows, spacious interior and ample storage space, the Cruiser offers a beautiful view wherever you go.',
-			imageUrl: 'gs://rent-a-car-2e818.appspot.com/the-cruiser.png',
+			imageUrl:
+				'https://firebasestorage.googleapis.com/v0/b/rent-a-car-2e818.appspot.com/o/images%2Fthe-cruiser.png?alt=media&token=8eb0de6d-e25f-4172-9ce8-5a36c6750ab0',
 			type: 'luxury',
 			hostId: '789',
 		});
@@ -63,7 +68,8 @@ createServer({
 			price: 70,
 			description:
 				"With this van, you can take your travel life to the next level. The Green Wonder is a sustainable vehicle that's perfect for people who are looking for a stylish, eco-friendly mode of transport that can go anywhere.",
-			imageUrl: 'gs://rent-a-car-2e818.appspot.com/green-wonder.png',
+			imageUrl:
+				'https://firebasestorage.googleapis.com/v0/b/rent-a-car-2e818.appspot.com/o/images%2Fgreen-wonder.png?alt=media&token=5ef7b92a-9a27-444a-965f-395a569160b7',
 			type: 'rugged',
 			hostId: '123',
 		});
@@ -83,23 +89,23 @@ createServer({
 
 		this.get('/cars', (schema, request) => {
 			// return new Response(400, {}, {error: "Error fetching data"})
-			return schema.vans.all();
+			return schema.cars.all();
 		});
 
 		this.get('/cars/:id', (schema, request) => {
 			const id = request.params.id;
-			return schema.vans.find(id);
+			return schema.cars.find(id);
 		});
 
 		this.get('/host/cars', (schema, request) => {
 			// Hard-code the hostId for now
-			return schema.vans.where({ hostId: '123' });
+			return schema.cars.where({ hostId: '123' });
 		});
 
 		this.get('/host/cars/:id', (schema, request) => {
 			// Hard-code the hostId for now
 			const id = request.params.id;
-			return schema.vans.findBy({ id, hostId: '123' });
+			return schema.cars.findBy({ id, hostId: '123' });
 		});
 
 		this.post(

@@ -23,6 +23,10 @@ body {
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 }
+img {
+	max-width: 100%;
+	position: static !important;
+}
 
 .site-wrapper {
 	min-height: 100vh;
@@ -120,7 +124,7 @@ footer {
 /*** HOME PAGE ***/
 .home-container {
 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)),
-		url('./assets/images/about-hero.png') no-repeat center center;
+		url('/assets/images/about-hero.png') no-repeat center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -210,6 +214,7 @@ footer {
 /*** VAN PAGES ***/
 .car-list-container {
 	padding-inline: 23px;
+	margin-bottom: 76px;
 }
 
 .car-list-filter-buttons {

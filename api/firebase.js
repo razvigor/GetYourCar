@@ -1,4 +1,5 @@
 import { initializeApp } from 'firebase/app';
+import { getStorage } from 'firebase/storage';
 
 import {
 	getFirestore,
@@ -8,7 +9,7 @@ import {
 	getDoc,
 	query,
 	where,
-} from 'firebase/firestore/lite';
+} from 'firebase/firestore';
 
 const firebaseConfig = {
 	apiKey: 'AIzaSyDJ625GgMRFI_1Xlxcv2rYJsB2EP8m3Vnw',
@@ -24,6 +25,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
+
+const storage = getStorage(app);
 
 const carsCollectionRef = collection(db, 'cars');
 
@@ -54,3 +57,4 @@ export async function getHostCars() {
 	}));
 	return dataArr;
 }
+export { storage };
